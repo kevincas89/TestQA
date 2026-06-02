@@ -13,5 +13,8 @@ namespace DemoSite.DTO
         public abstract string Subjects { get; }
         public abstract string MovileNumber { get; }
         public abstract string CurrentAddress { get; }
+        public abstract string DayOfBirth { get; }
+        public abstract string MonthOfBirth { get; }
+        public abstract string YearOfBirth { get; }
     }
 }
