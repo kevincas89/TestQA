@@ -21,5 +21,10 @@ namespace DemoSite.Factory
         public override string DayOfBirth => "01";
         public override string MonthOfBirth => "June";
         public override string YearOfBirth => "1990";
+        public override string Hobbies => "Sport, Reading";
+        public override string Picture => @"C:\Users\kevin\OneDrive\Documentos\file.txt";
+        public override string State => "Haryana";
+        public override string City => "Karnal";
+        public override string Gender => "Male";
     }
 }
