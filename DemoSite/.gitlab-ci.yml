@@ -1,0 +1,34 @@
+# .gitlab-ci.yml
+
+image: mcr.microsoft.com/dotnet/sdk:8.0
+
+stages:
+  - build
+  - test
+
+variables:
+  DOTNET_VERSION: "8.0"
+
+build:
+  stage: build
+  script:
+    - dotnet restore
+    - dotnet build --no-restore
+  artifacts:
+    paths:
+      - bin/
+
+test:
+  stage: test
+  before_script:
+    # Instala dependencias de Playwright
+    - apt-get update && apt-get install -y wget
+    - pwsh bin/Debug/net8.0/playwright.ps1 install --with-deps
+  script:
+    - dotnet test --logger "junit;LogFilePath=TestResults/results.xml"
+  artifacts:
+    when: always
+    paths:
+      - TestResults/
+    reports:
+      junit: TestResults/*.xml

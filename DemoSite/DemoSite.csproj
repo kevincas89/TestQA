@@ -24,4 +24,13 @@
     <Using Include="System.Threading.Tasks" />
   </ItemGroup>
 
+	<PropertyGroup>
+		<VSTestLogger>junit</VSTestLogger>
+		<VSTestResultsDirectory>TestResults</VSTestResultsDirectory>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="JUnitXml.TestLogger" Version="3.0.114" />
+	</ItemGroup>
+
 </Project>
